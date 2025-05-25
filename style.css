@@ -1,0 +1,80 @@
+body {
+    background-color: #1a1a1a; /* Темний фон */
+    color: #00ff00; /* Зелений текст, типовий для терміналів */
+    font-family: 'Courier New', Courier, monospace; /* Моноширинний шрифт */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Вирівнювання по центру екрану */
+    overflow: hidden;
+}
+
+.terminal-container {
+    width: 90%;
+    max-width: 800px;
+    height: 60vh;
+    background-color: #000; /* Чорний фон терміналу */
+    border: 1px solid #00ff00; /* Зелена рамка */
+    padding: 15px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5); /* Зелене світіння */
+}
+
+.terminal-output {
+    flex-grow: 1; /* Займає весь доступний простір */
+    overflow-y: auto; /* Прокрутка, якщо вивід завеликий */
+    margin-bottom: 10px;
+    white-space: pre-wrap; /* Зберігає переноси рядків та пробіли */
+    word-wrap: break-word; /* Переносить довгі слова */
+}
+
+.terminal-input-line {
+    display: flex;
+    align-items: center;
+}
+
+.prompt-symbol {
+    color: #00ff00;
+    margin-right: 5px;
+}
+
+.terminal-input {
+    background-color: transparent; /* Прозорий фон */
+    border: none;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+    outline: none; /* Прибрати рамку при фокусі */
+    flex-grow: 1; /* Займає весь доступний простір */
+}
+
+/* Стиль для виводу */
+.output-line {
+    color: #00ff00; /* Колір виводу */
+}
+
+/* Стиль для помилок або спеціальних повідомлень */
+.error-line {
+    color: #ff3333; /* Червоний для помилок */
+}
+
+/* Прибираємо стандартний вигляд скролбару (опціонально) */
+.terminal-output::-webkit-scrollbar {
+    width: 8px;
+}
+
+.terminal-output::-webkit-scrollbar-track {
+    background: #222;
+}
+
+.terminal-output::-webkit-scrollbar-thumb {
+    background: #008800;
+    border-radius: 4px;
+}
+
+.terminal-output::-webkit-scrollbar-thumb:hover {
+    background: #00bb00;
+}
